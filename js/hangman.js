@@ -8,7 +8,7 @@ var canvas = document.getElementById('stage'),
  
  function init() { 
  var helptext = $('#helptext'),
- w = screen.availWidth <= 800 ? screen.availWidth : 800; // Hide the loading message and display the control buttons
+ w = screen.availWidth <= 800 ? screen.availWidth : 800;
  $('#loading').hide();
  $('#play').css('display', 'inline-block').click(newGame);
  $('#clear').css('display', 'inline-block').click(resetScore);
