@@ -11,7 +11,9 @@
 Modernizr.load([{
 
 	
-	load: ['js/jquery-1.7.min.js', 'js/hangman.js'],
+	test: Modernizr.localstorage,
+	nope: ['js/json2.js', 'js/storage_polyfill.js'],
+	both: ['js/jquery-1.7.min.js', 'js/hangman.js'],
 	complete: function() {
 		init();
 	}
