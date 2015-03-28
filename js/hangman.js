@@ -52,6 +52,7 @@ function newGame() {
 		frag.appendChild(div);
 	}
 	letters.appendChild(frag);
+	drawCanvas();
 	
 }
 
@@ -133,8 +134,11 @@ function drawCanvas() {
 	if (correctGuesses == wordLength) {
 		letters.innerHTML = '';
 		c.fillText('You won!', 45,110);
+		localStorage.setItem('hangmanWin', 1 + parseInt(localStorage.getItem('hangmanWin')));
+		setTimeout(showScore, 2000);
 }
 }
+
 
 
 function drawLine(context, from, to) {
@@ -156,8 +160,23 @@ function showResult() {
 }
 
 
+function showScore() {
+	var won = localStorage.getItem('hangmanWin'),
+	    lost = localStorage.getItem('hangmanLose'),
+		c = canvas.getContext('2d');
+	canvas.width = canvas.width;
+	c.font = 'bold 24px Optimer, Arial, Helvetica, sans-serif';
+    c.fillStyle = 'red';
+	c.textAlign = 'center';
+	c.fillText('YOUR SCORE', 100, 50);
+	c.font = 'bold 18px Optimer, Arial, Helvetica, sans-serif';
+	c.fillText('Won: ' + won + ' Lost: ' + lost, 100, 80);
+}
+
 function resetScore() {
-	alert('Score has been reset');
+	localStorage.setItem('hangmanWin', '0');
+	localStorage.setItem('hangmanLose', '0');
+	showScore();
 }
 
 
