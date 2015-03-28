@@ -6,11 +6,11 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	background:#2F2E2E;
+	color:#fff;
 }
 #nav1{
 background:black;
 margin:auto;
-width:auto;
 }
 h1 {
 	text-align: center;
