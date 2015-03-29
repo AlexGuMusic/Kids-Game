@@ -53,6 +53,7 @@ function newGame() {
 	}
 	letters.appendChild(frag);
 	drawCanvas();
+	window.scrollBy(0, 200);
 	
 }
 
