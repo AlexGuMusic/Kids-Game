@@ -5,12 +5,16 @@
 <title>Hangman</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-
+<!--[if lte IE 8]>
+    <script src="scripts/excanvas.js"></script>
+<![endif]-->
 <script src="js/modernizr.hangman.js"></script>
 <script>
 Modernizr.load([{
-
-	
+	test: Modernizr.canvastext,
+	nope: ['js/canvas.text.js', 'js/optimer-bold-normal.js']
+},
+{
 	test: Modernizr.localstorage,
 	nope: ['js/json2.js', 'js/storage_polyfill.js'],
 	both: ['js/jquery-1.7.min.js', 'js/hangman.js'],
