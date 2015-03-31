@@ -54,6 +54,8 @@ function newGame() {
 	letters.appendChild(frag);
 	drawCanvas();
 	window.scrollBy(0, 200);
+	localStorage.setItem('hangmanLose','0');
+	localStorage.setItem('hangmanWin','0');
 	
 }
 
