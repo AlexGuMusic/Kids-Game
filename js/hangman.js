@@ -54,8 +54,7 @@ function newGame() {
 	letters.appendChild(frag);
 	drawCanvas();
 	window.scrollBy(0, 200);
-	localStorage.setItem('hangmanLose','0');
-	localStorage.setItem('hangmanWin','0');
+
 	
 }
 
@@ -130,14 +129,14 @@ function drawCanvas() {
 			c.fillText('Game over', 45, 110);
 			letters.innerHTML = '';
 			setTimeout(showResult, 200);
-			localStorage.setItem('hangmanLose', 1 + parseInt(localStorage.getItem('hangmanLose')));
+			localStorage.setItem('hangmanLose', (0+1) + parseInt(localStorage.getItem('hangmanLose')));
 			setTimeout(showScore, 2000);
 		}
 	}
 	if (correctGuesses == wordLength) {
 		letters.innerHTML = '';
 		c.fillText('You won!', 45,110);
-		localStorage.setItem('hangmanWin', 1 + parseInt(localStorage.getItem('hangmanWin')));
+		localStorage.setItem('hangmanWin', (0+1) + parseInt(localStorage.getItem('hangmanWin')));
 		setTimeout(showScore, 2000);
 }
 }
